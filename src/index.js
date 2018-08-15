@@ -1,4 +1,6 @@
-var func = str => {
-    document.getElementById("app").innerHTML = str
-};
-func("Hello Babel!");
+import React from 'react';
+import ReactDom from 'react-dom';
+import Hello from './component/Hello';
+
+ReactDom.render(
+    <Hello/>, document.getElementById('app'));
