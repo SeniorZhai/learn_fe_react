@@ -43,3 +43,44 @@ document.getElementById('app').innerHTML = "Webpack works"
 ```
 在浏览器中打开`index.html`测试
 
+### Babel
+> Babel是一个JS转码工具，能将ES7的转换成低版本可用的代码
+
+```
+npm install --save-dev babel-cli babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-0
+```
+
+配置babel文件`touch .babelrc`
+```
+{
+   "presets": [
+     "es2015",
+     "react",
+     "stage-0"
+   ],
+   "plugins": []
+ }
+```
+在`webpack.config.js`中添加
+```js
+module.exports = {
+  //...
+  module:{
+      rules:[{
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: ['babel-loader']
+      }]
+  }
+  //...
+}
+```
+修改`src/index.js`
+```js
+var func = str => {
+    document.getElementById("app").innerHTML = str
+};
+func("Hello Babel!");
+```
+运行`webpack --config webpack.config.js`
+浏览器中打开`index.html`测试
