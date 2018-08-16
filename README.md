@@ -123,3 +123,71 @@ export default class Hello extends Component {
 }
 ```
 打包直接执行`npm start`即可
+
+### react-router
+安装`npm install --save react-router-dom`
+新建`src/roter/roter.js`
+```js
+import React from 'react'
+
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+
+import Home from '../pages/Home'
+import Page1 from '../pages/Page1'
+
+const getRouter = ()=> (
+    <Router>
+         <div>
+            <ul>
+                <li><Link to="/">首页</Link></li>
+                <li><Link to="/page1">Page1</Link></li>
+            </ul>
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route path="/page1" component={Page1}/>
+            </Switch>
+        </div>
+    </Router>
+)
+
+export default getRouter
+```
+新建`src/pages/Home.js`和`src/pages/Page1`
+```js
+import React, {Component} from 'react';
+
+export default class Home extends Component {
+    render() {
+        return (
+            <div>
+                this is home~
+            </div>
+        )
+    }
+}
+```
+
+```js
+import React, {Component} from 'react';
+
+export default class Page1 extends Component {
+    render() {
+        return (
+            <div>
+                this is Page1~
+            </div>
+        )
+    }
+}
+```
+修改`index.js`
+```js
+import React from 'react';
+import ReactDom from 'react-dom';
+
+import getRouter from './router/router';
+
+ReactDom.render(
+    getRouter(), document.getElementById('app'));
+```
+运行`npm start`查看效果
