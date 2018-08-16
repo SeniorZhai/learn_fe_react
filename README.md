@@ -84,3 +84,42 @@ func("Hello Babel!");
 ```
 运行`webpack --config webpack.config.js`
 浏览器中打开`index.html`测试
+
+
+### react
+`npm install --save react react-dom`
+
+修改`src/index.js`
+```js
+import React from 'react';
+import ReactDom from 'react-dom';
+import Hello from './component/Hello';
+
+ReactDom.render(
+    <Hello/>, document.getElementById('app'));
+```
+添加`./component/Hello.js`
+```js
+import React, {Component} from 'react';
+
+export default class Hello extends Component {
+    render() {
+        return (
+            <div>
+                Hello,React!
+            </div>
+        )
+    }
+}
+```
+打包后查看效果
+
+### 启动脚本
+在`package.json`中添加
+```js
+"scripts":{
+  "start": "webpack --mode development",
+  "build": "webpack -—mode production",
+}
+```
+打包直接执行`npm start`即可
