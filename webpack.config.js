@@ -14,5 +14,12 @@ module.exports = {
       // 指定loader
       use: 'babel-loader'
     }]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, './dist'),
+    port: 8080,
+    contentBase: path.join(__dirname, './dist'),
+    historyApiFallback: true,
+    host: '0.0.0.0'
   }
 };
