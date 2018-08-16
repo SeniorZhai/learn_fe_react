@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  // 入口
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -8,9 +9,10 @@ module.exports = {
   },
   module:{
     rules:[{
+      // 标识应该被对应loader进行转换的文件
       test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      use: ['babel-loader']
+      // 指定loader
+      use: 'babel-loader'
     }]
   }
 };
