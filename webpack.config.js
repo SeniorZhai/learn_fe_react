@@ -24,13 +24,12 @@ module.exports = {
       component: path.join(__dirname, "src/component"),
       router: path.join(__dirname, "src/router"),
       actions: path.join(__dirname, "src/redux/actions"),
-      reducers: path.join(__dirname, "src/redux/reducers"),
+      reducers: path.join(__dirname, "src/redux/reducers")
     }
   },
   devServer: {
     contentBase: path.join(__dirname, "./dist"),
     port: 8080,
-    contentBase: path.join(__dirname, "./dist"),
     historyApiFallback: true,
     host: "0.0.0.0"
   }

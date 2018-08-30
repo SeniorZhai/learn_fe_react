@@ -8,7 +8,8 @@
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -23,8 +24,8 @@
     "webpack-dev-server": "^3.1.5"
   },
   "scripts": {
-    "build": "webpack -—mode development",
-    "start": "webpack-dev-server --config webpack.config.js --color --progress --hot",
+    "build": "webpack -—mode=development",
+    "start": "webpack-dev-server --config webpack.config.js --mode=development --color --progress --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
