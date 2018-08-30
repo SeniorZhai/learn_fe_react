@@ -25,7 +25,6 @@ module.exports = {
       router: path.join(__dirname, "src/router"),
       actions: path.join(__dirname, "src/redux/actions"),
       reducers: path.join(__dirname, "src/redux/reducers"),
-      redux: path.join(__dirname, "src/redux")
     }
   },
   devServer: {

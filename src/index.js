@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 import {AppContainer} from 'react-hot-loader';
+import {Provider} from 'react-redux';
+import store from './redux/store';
 
 import getRouter from './router/router';
 
@@ -19,7 +21,10 @@ if (module.hot) {
 function renderWithHotReload(RootElement) {
     ReactDom.render(
         <AppContainer>
-            {RootElement}
+            // 让所有组件可以访问到store
+            <Provider store={store}>
+                {RootElement}
+            </Provider>
         </AppContainer>,
         document.getElementById('app')
     )
