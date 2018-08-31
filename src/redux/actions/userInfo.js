@@ -23,12 +23,10 @@ function getUserInfoFail() {
 
 export function getUserInfo() {
   return function(dispatch) {
-    dispatch(getUserInfoRequest());
+    dispatch(getUserInfoRequest()); 
 
-    return fetch("http://0.0.0.0:8080/api/user.json")
-      .then(response => {
-        return response.json();
-      })
+    return fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then(response => response.json())
       .then(json => {
         dispatch(getUserInfoSuccess(json));
       })

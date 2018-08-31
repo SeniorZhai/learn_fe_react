@@ -18,6 +18,7 @@ module.exports = {
       }
     ]
   },
+  devtool: 'inline-source-map',
   resolve: {
     alias: {
       pages: path.join(__dirname, "src/pages"),
